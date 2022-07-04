@@ -1,8 +1,12 @@
 <template>
   <section class="filters">
-    <FilterButton />
-    <FilterButton />
-    <FilterButton />
+    <div class="filters__list">
+      <FilterButton label="Frontend" />
+      <FilterButton label="CSS" />
+      <FilterButton label="JavaScript" />
+    </div>
+
+    <button class="filters__clear">Clear</button>
   </section>
 </template>
 
@@ -13,7 +17,7 @@ import FilterButton from "./FilterButton.vue";
 <style lang="scss" scoped>
 .filters {
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   min-height: 7.2rem;
   background-color: green;
   transform: translateY(-3.6rem);
@@ -21,9 +25,26 @@ import FilterButton from "./FilterButton.vue";
   border-radius: var(--size-border-radius);
   background-color: var(--clr-white);
 
-  & > *:not(:last-child) {
-    margin-right: 1.6rem;
-    margin-bottom: 1.6rem;
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+  }
+
+  &__clear {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--clr-text);
+    font-weight: 600;
+    transition: all 0.3s;
+
+    &:hover {
+      color: var(--clr-primary);
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
 
