@@ -2,7 +2,7 @@
   <div class="app">
     <TheHeader />
     <main class="main">
-      <div class="filters">Filters</div>
+      <JobFilters />
       <div class="jobs">
         <div class="jobs__job">Single Job</div>
         <div class="jobs__job">Single Job</div>
@@ -16,6 +16,7 @@
 
 <script lang="ts" setup>
 import TheHeader from "./components/TheHeader.vue";
+import JobFilters from "./components/JobFilters.vue";
 </script>
 
 <style lang="scss">
@@ -30,12 +31,6 @@ import TheHeader from "./components/TheHeader.vue";
 .main {
   max-width: 32.7rem;
   margin: 0 auto;
-}
-
-.filters {
-  min-height: 7.2rem;
-  background-color: green;
-  transform: translateY(-3.6rem);
 }
 
 .jobs {
