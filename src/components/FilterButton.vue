@@ -1,6 +1,6 @@
 <template>
   <button class="filter-btn">
-    <span class="filter-btn__tag">Frontend</span>
+    <span class="filter-btn__tag">{{ label }}</span>
     <span class="filter-btn__remove">
       <RemoveIcon fill-color="var(--clr-white)" :width="14" :height="14" />
     </span>
@@ -9,6 +9,14 @@
 
 <script lang="ts" setup>
 import RemoveIcon from "./icons/RemoveIcon.vue";
+import { defineProps } from "vue";
+
+defineProps({
+  label: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <style lang="scss" scoped>
