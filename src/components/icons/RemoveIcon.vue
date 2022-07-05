@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import { defineProps } from "vue";
-const props = defineProps({
+defineProps({
   width: {
     type: Number,
     default: 48,
@@ -24,5 +24,4 @@ const props = defineProps({
     default: "fillColor",
   },
 });
-console.log("props: ", props);
 </script>

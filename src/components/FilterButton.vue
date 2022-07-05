@@ -1,7 +1,7 @@
 <template>
   <button class="filter-btn">
     <span class="filter-btn__tag">{{ label }}</span>
-    <span class="filter-btn__remove">
+    <span class="filter-btn__remove" @click="onRemoveIcon(label)">
       <RemoveIcon fill-color="var(--clr-white)" :width="14" :height="14" />
     </span>
   </button>
@@ -9,7 +9,12 @@
 
 <script lang="ts" setup>
 import RemoveIcon from "./icons/RemoveIcon.vue";
+import { state } from "../composables/filters";
 import { defineProps } from "vue";
+
+const onRemoveIcon = (label: string) => {
+  state.filters = state.filters.filter((filter) => filter !== label);
+};
 
 defineProps({
   label: {

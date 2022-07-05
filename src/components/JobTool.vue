@@ -1,13 +1,21 @@
 <template>
-  <button class="tool">{{ tool }}</button>
+  <button class="tool" @click="onTool(tool)">{{ tool }}</button>
 </template>
 
 <script lang="ts" setup>
+import { state } from "../composables/filters";
 import { defineProps } from "vue";
 
 const props = defineProps<{ tool: string }>();
 
-console.log("pops tool: ", props);
+const onTool = (tool: string) => {
+  const filters = state.filters;
+  if (filters.includes(tool)) {
+    state.filters = state.filters.filter((filter) => filter !== tool);
+  } else {
+    state.filters.push(tool);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
