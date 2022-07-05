@@ -1,13 +1,24 @@
 <template>
-  <section class="filters">
-    <FilterButton />
-    <FilterButton />
-    <FilterButton />
+  <section class="filters" v-if="state.filters.length">
+    <div class="filters__list">
+      <FilterButton
+        v-for="filter in state.filters"
+        :key="filter"
+        :label="filter"
+      />
+    </div>
+
+    <button class="filters__clear" @click="onClear">Clear</button>
   </section>
 </template>
 
 <script lang="ts" setup>
 import FilterButton from "./FilterButton.vue";
+import { state } from "../composables/filters";
+
+const onClear = () => {
+  state.filters = [];
+};
 </script>
 
 <style lang="scss" scoped>
