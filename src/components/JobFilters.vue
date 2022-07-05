@@ -24,7 +24,7 @@ const onClear = () => {
 <style lang="scss" scoped>
 .filters {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   min-height: 7.2rem;
   background-color: green;
   transform: translateY(-3.6rem);
@@ -32,26 +32,9 @@ const onClear = () => {
   border-radius: var(--size-border-radius);
   background-color: var(--clr-white);
 
-  &__list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.6rem;
-  }
-
-  &__clear {
-    margin-left: auto;
-    background: none;
-    border: none;
-    color: var(--clr-text);
-    font-weight: 600;
-    transition: all 0.3s;
-
-    &:hover {
-      color: var(--clr-primary);
-      cursor: pointer;
-      text-decoration: underline;
-    }
+  & > *:not(:last-child) {
+    margin-right: 1.6rem;
+    margin-bottom: 1.6rem;
   }
 }
 

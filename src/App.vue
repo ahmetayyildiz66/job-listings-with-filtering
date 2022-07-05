@@ -3,7 +3,13 @@
     <TheHeader />
     <main class="main">
       <JobFilters />
-      <DevJobs />
+      <div class="jobs">
+        <div class="jobs__job">Single Job</div>
+        <div class="jobs__job">Single Job</div>
+        <div class="jobs__job">Single Job</div>
+        <div class="jobs__job">Single Job</div>
+        <div class="jobs__job">Single Job</div>
+      </div>
     </main>
   </div>
 </template>
@@ -11,7 +17,6 @@
 <script lang="ts" setup>
 import TheHeader from "./components/TheHeader.vue";
 import JobFilters from "./components/JobFilters.vue";
-import DevJobs from "./components/DevJobs.vue";
 </script>
 
 <style lang="scss">
@@ -21,7 +26,7 @@ import DevJobs from "./components/DevJobs.vue";
   max-width: 144rem;
   margin: 0 auto;
   background-color: var(--clr-secondary);
-  padding-bottom: 3.4rem;
+  height: 100vh;
 }
 .main {
   max-width: 32.7rem;
@@ -39,12 +44,16 @@ import DevJobs from "./components/DevJobs.vue";
 }
 
 @media only screen and (min-width: 376px) {
-  .app {
-    padding-bottom: 12rem;
-  }
-
   .main {
     max-width: 111rem;
+  }
+
+  .jobs {
+    &__job {
+      height: 15.2rem;
+      background-color: blue;
+      margin-bottom: 2.4rem;
+    }
   }
 }
 </style>
